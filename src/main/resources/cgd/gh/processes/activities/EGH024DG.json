@@ -1,0 +1,56 @@
+ {
+	"id": "EGH024DG",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHC915A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHC915A",
+					"type": "Task",
+					"actionClass": "Pghc915a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FWK401",
+							"type": "Parameter",
+							"value": "FWK401"
+						},
+						 {
+							"id": "FWK501",
+							"type": "Parameter",
+							"value": "FWK501"
+						},
+						 {
+							"id": "FWK601",
+							"type": "Parameter",
+							"value": "FWK601"
+						},
+						 {
+							"id": "FWK701",
+							"type": "Parameter",
+							"value": "FWK701"
+						},
+						 {
+							"id": "FWK915",
+							"type": "Parameter",
+							"value": "FWK915"
+						}
+					]
+				},
+				 {
+					"id": "toPGHC915A",
+					"type": "Flow",
+					"condition": "EGH024DG >= 4",
+					"target": "PGHC915A"
+				}
+			]
+		}
+	]
+}

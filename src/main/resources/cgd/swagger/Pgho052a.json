@@ -1,0 +1,339 @@
+ {
+    "swagger": "2.0",
+    "info": {
+        "description": "Documentação de serviços",
+        "version": "v01",
+        "title": "Serviços de OffLoading de Consultas de Central"
+    },
+    "host": "udc6001wai03:12103",
+    "basePath": "/",
+    "tags": [
+         {
+            "name": "Consultas de Central (serviços unitários)",
+            "description": "REST endpoint"
+        }
+    ],
+    "paths": {
+        "/pgho052a": {
+            "post": {
+                "tags": [
+                    "APLICACAO : GH - HISTORICO DE MOVIMENTOS"
+                ],
+                "summary": "Pgho052a - Carregamento de Pedidos de Informacao * NOTA : pedidos com mais de 2 anos so permite carregar um por conta",
+                "operationId": "invoke_pgho052aUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                     {
+                        "in": "body",
+                        "name": "input",
+                        "description": "input",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Input"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Output"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Input": {
+            "allOf": [
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdHeaderV1"
+                },
+                 {
+                    "$ref": "#/definitions/InputMessage"
+                },
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdFooterV1"
+                }
+            ],
+            "title": "Pgho052a Input envelope"
+        },
+        "Output": {
+            "allOf": [
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdHeaderV1"
+                },
+                 {
+                    "$ref": "#/definitions/OutputMessage"
+                },
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdFooterV1"
+                }
+            ],
+            "title": "Pgho052a Output envelope"
+        },
+        "Bghm0520": {
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                 {
+                    "$ref": "#/definitions/MsgIn"
+                }
+            ]
+        },
+        "MsgIn": {
+            "type": "object",
+            "properties": {
+                "ase": {
+                    "$ref": "#/definitions/AseIn"
+                },
+                "ade": {
+                    "$ref": "#/definitions/AdeIn"
+                }
+            }
+        },
+        "AseIn": {
+            "type": "object",
+            "properties": {
+                "tsPedidoSt": {
+                    "$ref": "#/definitions/TsPedidoStIn"
+                }
+            }
+        },
+        "TsPedidoStIn": {
+            "type": "object",
+            "properties": {
+                "tsPedidoS": {
+                    "type": "string"
+                },
+                "tsPedidoM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "AdeIn": {
+            "type": "object",
+            "properties": {
+                "tsPedido": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cPaisIsoaCont": {
+                    "type": "string"
+                },
+                "cBancCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cOeEgcCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsRdclCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vChkdCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTipoCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cMoedIsoScta": {
+                    "type": "string"
+                },
+                "nsDeposito": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "Bghm0521": {
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                 {
+                    "$ref": "#/definitions/MsgOut"
+                }
+            ]
+        },
+        "MsgOut": {
+            "type": "object",
+            "properties": {
+                "ase": {
+                    "$ref": "#/definitions/AseOut"
+                },
+                "ade": {
+                    "$ref": "#/definitions/AdeOut"
+                }
+            }
+        },
+        "AseOut": {
+            "type": "object",
+            "properties": {
+                "tsPedidoSt": {
+                    "$ref": "#/definitions/TsPedidoStOut"
+                }
+            }
+        },
+        "TsPedidoStOut": {
+            "type": "object",
+            "properties": {
+                "tsPedidoS": {
+                    "type": "string"
+                },
+                "tsPedidoM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "AdeOut": {
+            "type": "object",
+            "properties": {
+                "grPed": {
+                    "$ref": "#/definitions/GrPed"
+                },
+                "iMsgCtnd": {
+                    "type": "string"
+                },
+                "cPaisIsoaContK": {
+                    "type": "string"
+                },
+                "cBancContK": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cOeEgcContK": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsRdclContK": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vChkdContK": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTipoContK": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cMoedIsoSctaK": {
+                    "type": "string"
+                },
+                "nsDepositoK": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "GrPed": {
+            "type": "object",
+            "properties": {
+                "aloI1": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cPaisIsoaCont": {
+                    "type": "string"
+                },
+                "cBancCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cOeEgcCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsRdclCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vChkdCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTipoCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cMoedIsoScta": {
+                    "type": "string"
+                },
+                "nsDeposito": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cPedInfOpps": {
+                    "type": "string"
+                },
+                "zInicMov": {
+                    "type": "string"
+                },
+                "zFimMov": {
+                    "type": "string"
+                }
+            }
+        },
+        "InputMessage": {
+            "type": "object",
+            "properties": {
+                "mensagem": {
+                    "allOf": [
+                         {
+                            "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdMessageV1"
+                        }
+                    ],
+                    "properties": {
+                        "msgIn": {
+                            "$ref": "#/definitions/Bghm0520"
+                        }
+                    }
+                }
+            }
+        },
+        "OutputMessage": {
+            "type": "object",
+            "properties": {
+                "mensagem": {
+                    "allOf": [
+                         {
+                            "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdMessageV1"
+                        }
+                    ],
+                    "properties": {
+                        "msgOut": {
+                            "$ref": "#/definitions/Bghm0521"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

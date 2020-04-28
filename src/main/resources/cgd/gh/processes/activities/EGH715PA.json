@@ -1,0 +1,59 @@
+ {
+	"id": "EGH715PA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF001ST",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF001ST",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF001ST",
+					"type": "Flow",
+					"condition": "EGH715PA = 0",
+					"target": "GHF001ST"
+				}
+			]
+		},
+		 {
+			"id": "GHF002ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "PGHQZ40A",
+			"type": "Task",
+			"actionClass": "Pghqz40a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH027",
+					"type": "Parameter",
+					"value": "FGH027"
+				},
+				 {
+					"id": "FHT011",
+					"type": "Parameter",
+					"value": "FHT011"
+				},
+				 {
+					"id": "FWK026",
+					"type": "Parameter",
+					"value": "FWK026"
+				}
+			]
+		},
+		 {
+			"id": "GHF004ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

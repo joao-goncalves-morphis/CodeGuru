@@ -1,0 +1,19 @@
+ {
+	"id": "EGH006DA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "GHM006BK",
+			"type": "Task",
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "undefined",
+			"elements": [
+				 {
+					"id": "BACKUP",
+					"type": "Parameter",
+					"value": "FGHM06(+1)"
+				}
+			]
+		}
+	]
+}

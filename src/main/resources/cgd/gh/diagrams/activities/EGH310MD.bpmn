@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH310MD" id="EGH310MD" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH310MD" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwGHA310D1"/>
+				<bpmn2:sequenceFlow id="flowgwGHA310D1End" sourceRef="gwGHA310D1" targetRef="gwGHA310D1End"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwGHA310D1" name="gwGHA310D1">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwGHA310D1End</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwGHA310D1_GHA310D1" sourceRef="gwGHA310D1" targetRef="GHA310D1"/>
+				<bpmn2:sequenceFlow id="toGHA310D1" sourceRef="GHA310D1" targetRef="gwGHA310D1End"/>
+				<bpmn2:serviceTask id="GHA310D1" name="GHA310D1">
+						<bpmn2:incoming>flow_gwGHA310D1_GHA310D1</bpmn2:incoming>
+						<bpmn2:outgoing>toGHA310D1</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHA310D1IOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwGHA310D1_GHA310D2" sourceRef="gwGHA310D1End" targetRef="GHA310D2"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwGHA310D1End" name="gwGHA310D1End">
+						<bpmn2:incoming>toGHA310D1</bpmn2:incoming>
+						<bpmn2:incoming>flowgwGHA310D1End</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwGHA310D1_GHA310D2</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:sequenceFlow id="flow_GHA310D2_GHA310D9" sourceRef="GHA310D2" targetRef="GHA310D9"/>
+				<bpmn2:serviceTask id="GHA310D2" name="GHA310D2">
+						<bpmn2:incoming>flow_gwGHA310D1_GHA310D2</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHA310D2_GHA310D9</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHA310D2IOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="GHA310D9" name="GHA310D9">
+						<bpmn2:incoming>flow_GHA310D2_GHA310D9</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHA310D9IOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="GHA310D9" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

@@ -1,0 +1,41 @@
+ {
+	"id": "EGH628AK",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ502A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ502A",
+					"type": "Task",
+					"actionClass": "Pghq502a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FWK502",
+							"type": "Parameter",
+							"value": "FWK502"
+						},
+						 {
+							"id": "INPUT1",
+							"type": "Parameter",
+							"value": "FWK060"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ502A",
+					"type": "Flow",
+					"condition": "EGH628AK = 0",
+					"target": "PGHQ502A"
+				}
+			]
+		}
+	]
+}

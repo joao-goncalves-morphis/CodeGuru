@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EHO028DG" id="EHO028DG" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EHO028DG" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="PHOC069A"/>
+				<bpmn2:dataObject id="FHO452" name="PGBBANC.FHO452"/>
+				<bpmn2:dataObjectReference dataObjectRef="FHO452" id="RefFHO452" name="PGBBANC.FHO452"/>
+				<bpmn2:dataObject id="FHT011" name="PGBBANC.FHT011"/>
+				<bpmn2:dataObjectReference dataObjectRef="FHT011" id="RefFHT011" name="PGBBANC.FHT011"/>
+				<bpmn2:dataObject id="FWK040" name="PGBBANC.FWK040.EHO028DC"/>
+				<bpmn2:dataObjectReference dataObjectRef="FWK040" id="RefFWK040" name="PGBBANC.FWK040.EHO028DC"/>
+				<bpmn2:sequenceFlow id="flow_PHOC069A_HOF452RI" sourceRef="PHOC069A" targetRef="HOF452RI"/>
+				<bpmn2:serviceTask id="PHOC069A" name="PHOC069A">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flow_PHOC069A_HOF452RI</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PHOC069AIOSpec">
+								<bpmn2:dataInput id="pFHT011" name="pFHT011"/>
+								<bpmn2:dataInput id="pFWK040" name="pFWK040"/>
+								<bpmn2:inputSet id="PHOC069AInputSet" name="PHOC069AInputSet">
+										<bpmn2:dataInputRefs>pFHT011</bpmn2:dataInputRefs>
+										<bpmn2:dataInputRefs>pFWK040</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFHO452" name="pFHO452"/>
+								<bpmn2:outputSet id="PHOC069AOutputSet" name="PHOC069AOutputSet">
+										<bpmn2:dataOutputRefs>pFHO452</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="FHT011InputAssoc">
+								<bpmn2:sourceRef>RefFHT011</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFHT011</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataInputAssociation id="FWK040InputAssoc">
+								<bpmn2:sourceRef>RefFWK040</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFWK040</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FHO452OutputAssoc">
+								<bpmn2:sourceRef>pFHO452</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFHO452</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_HOF452RI_HOF452RO" sourceRef="HOF452RI" targetRef="HOF452RO"/>
+				<bpmn2:serviceTask id="HOF452RI" name="HOF452RI">
+						<bpmn2:incoming>flow_PHOC069A_HOF452RI</bpmn2:incoming>
+						<bpmn2:outgoing>flow_HOF452RI_HOF452RO</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="HOF452RIIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="HOF452RO" name="HOF452RO">
+						<bpmn2:incoming>flow_HOF452RI_HOF452RO</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="HOF452ROIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="HOF452RO" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

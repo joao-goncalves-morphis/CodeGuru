@@ -1,0 +1,53 @@
+ {
+	"id": "EPU304MA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPPUQ030A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PPUQ030A",
+					"type": "Task",
+					"actionClass": "Ppuq030a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FPU030",
+							"type": "Parameter",
+							"value": "FPU030"
+						},
+						 {
+							"id": "FWK020",
+							"type": "Parameter",
+							"value": "FWK020"
+						}
+					]
+				},
+				 {
+					"id": "toPPUQ030A",
+					"type": "Flow",
+					"condition": "EPU304MA = 0",
+					"target": "PPUQ030A"
+				}
+			]
+		},
+		 {
+			"id": "PUF001ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "PUF002ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

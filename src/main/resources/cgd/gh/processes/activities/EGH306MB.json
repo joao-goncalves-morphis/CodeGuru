@@ -1,0 +1,41 @@
+ {
+	"id": "EGH306MB",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHC172A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHC172A",
+					"type": "Task",
+					"actionClass": "Pghc172a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH172",
+							"type": "Parameter",
+							"value": "FGH172"
+						},
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK005",
+							"type": "Parameter",
+							"value": "FWK005"
+						}
+					]
+				},
+				 {
+					"id": "toPGHC172A",
+					"type": "Flow",
+					"condition": "EGH306MB = 0",
+					"target": "PGHC172A"
+				}
+			]
+		}
+	]
+}

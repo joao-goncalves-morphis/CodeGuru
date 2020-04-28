@@ -1,0 +1,15 @@
+package cgd.hg.routines;
+
+import cgd.framework.CgdExternalRoutine ;
+import morphis.framework.datatypes.annotations.Data ;
+
+
+/**
+ * 
+ * migrated from [GH]
+ * 
+ * @version 2.0
+ * 
+ */
+public abstract class Mhgj011a extends CgdExternalRoutine {
+}

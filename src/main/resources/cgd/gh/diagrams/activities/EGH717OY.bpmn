@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH717OY" id="EGH717OY" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH717OY" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwGHF717BK"/>
+				<bpmn2:sequenceFlow id="flowgwGHF717BKEnd" sourceRef="gwGHF717BK" targetRef="gwGHF717BKEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwGHF717BK" name="gwGHF717BK">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwGHF717BKEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwGHF717BK_GHF717BK" sourceRef="gwGHF717BK" targetRef="GHF717BK"/>
+				<bpmn2:sequenceFlow id="toGHF717BK" sourceRef="GHF717BK" targetRef="gwGHF717BKEnd"/>
+				<bpmn2:serviceTask id="GHF717BK" name="GHF717BK">
+						<bpmn2:incoming>flow_gwGHF717BK_GHF717BK</bpmn2:incoming>
+						<bpmn2:outgoing>toGHF717BK</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF717BKIOSpec">
+								<bpmn2:dataOutput id="pFGHM00" name="pFGHM00"/>
+								<bpmn2:outputSet id="GHF717BKOutputSet" name="GHF717BKOutputSet">
+										<bpmn2:dataOutputRefs>pFGHM00</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataOutputAssociation id="FGHM00OutputAssoc">
+								<bpmn2:sourceRef>pFGHM00</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFGHM00</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwGHF717BKEnd" name="gwGHF717BKEnd">
+						<bpmn2:incoming>toGHF717BK</bpmn2:incoming>
+						<bpmn2:incoming>flowgwGHF717BKEnd</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="gwGHF717BKEnd" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

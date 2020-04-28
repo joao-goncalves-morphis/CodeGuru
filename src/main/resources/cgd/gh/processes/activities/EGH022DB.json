@@ -1,0 +1,228 @@
+ {
+	"id": "EGH022DB",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ290A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ290A",
+					"type": "Task",
+					"actionClass": "Pghq290a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FWK290",
+							"type": "Parameter",
+							"value": "FWK500"
+						},
+						 {
+							"id": "FWKB16",
+							"type": "Parameter",
+							"value": "FWKB16"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ290A",
+					"type": "Flow",
+					"condition": "EGH022DB = 0",
+					"target": "PGHQ290A"
+				}
+			]
+		},
+		 {
+			"id": "GHF001ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "DWF001DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		},
+		 {
+			"id": "PGHQ290A",
+			"type": "Task",
+			"actionClass": "Pghq290a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FWK290",
+					"type": "Parameter",
+					"value": "FWK508"
+				},
+				 {
+					"id": "FWKB16",
+					"type": "Parameter",
+					"value": "FWKB16"
+				}
+			]
+		},
+		 {
+			"id": "GHF002ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "DWF002DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		},
+		 {
+			"id": "PGHQ290A",
+			"type": "Task",
+			"actionClass": "Pghq290a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FWK290",
+					"type": "Parameter",
+					"value": "FWK509"
+				},
+				 {
+					"id": "FWKB16",
+					"type": "Parameter",
+					"value": "FWKB16"
+				}
+			]
+		},
+		 {
+			"id": "GHF003ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "DWF003DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		},
+		 {
+			"id": "PGHQ290A",
+			"type": "Task",
+			"actionClass": "Pghq290a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FWK290",
+					"type": "Parameter",
+					"value": "FWK510"
+				},
+				 {
+					"id": "FWKB16",
+					"type": "Parameter",
+					"value": "FWKB16"
+				}
+			]
+		},
+		 {
+			"id": "GHF004ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "DWF004DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		},
+		 {
+			"id": "PGHQ290A",
+			"type": "Task",
+			"actionClass": "Pghq290a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FWK290",
+					"type": "Parameter",
+					"value": "FWK511"
+				},
+				 {
+					"id": "FWKB16",
+					"type": "Parameter",
+					"value": "FWKB16"
+				}
+			]
+		},
+		 {
+			"id": "GHF005ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "DWF005DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		},
+		 {
+			"id": "PGHQ290A",
+			"type": "Task",
+			"actionClass": "Pghq290a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FWK290",
+					"type": "Parameter",
+					"value": "FWKB17"
+				},
+				 {
+					"id": "FWKB16",
+					"type": "Parameter",
+					"value": "FWKB16"
+				}
+			]
+		},
+		 {
+			"id": "GHF006ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "DWF006DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		}
+	]
+}

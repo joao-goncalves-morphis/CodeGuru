@@ -1,0 +1,47 @@
+ {
+	"id": "EGH306MJ",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHC178A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHC178A",
+					"type": "Task",
+					"actionClass": "Pghc178a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH178",
+							"type": "Parameter",
+							"value": "FGH178"
+						},
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK810",
+							"type": "Parameter",
+							"value": "FWK810"
+						}
+					]
+				},
+				 {
+					"id": "toPGHC178A",
+					"type": "Flow",
+					"condition": "EGH306MJ = 0",
+					"target": "PGHC178A"
+				}
+			]
+		},
+		 {
+			"id": "GHF002ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

@@ -1,0 +1,46 @@
+ {
+	"id": "EGH010DG",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ002A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ002A",
+					"type": "Task",
+					"actionClass": "Pghq002a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FWK600",
+							"type": "Parameter",
+							"value": "FWK600"
+						},
+						 {
+							"id": "FWK900",
+							"type": "Parameter",
+							"value": "FWK900"
+						},
+						 {
+							"id": "INPUT1",
+							"type": "Parameter",
+							"value": "FWK007"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ002A",
+					"type": "Flow",
+					"condition": "EGH010DG = 0",
+					"target": "PGHQ002A"
+				}
+			]
+		}
+	]
+}

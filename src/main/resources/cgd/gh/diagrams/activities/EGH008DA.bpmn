@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH008DA" id="EGH008DA" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH008DA" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwGHF376RI"/>
+				<bpmn2:sequenceFlow id="flowgwGHF376RIEnd" sourceRef="gwGHF376RI" targetRef="gwGHF376RIEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwGHF376RI" name="gwGHF376RI">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwGHF376RIEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwGHF376RI_GHF376RI" sourceRef="gwGHF376RI" targetRef="GHF376RI"/>
+				<bpmn2:sequenceFlow id="toGHF376RI" sourceRef="GHF376RI" targetRef="gwGHF376RIEnd"/>
+				<bpmn2:serviceTask id="GHF376RI" name="GHF376RI">
+						<bpmn2:incoming>flow_gwGHF376RI_GHF376RI</bpmn2:incoming>
+						<bpmn2:outgoing>toGHF376RI</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF376RIIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwGHF376RI_GHF377RI" sourceRef="gwGHF376RIEnd" targetRef="GHF377RI"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwGHF376RIEnd" name="gwGHF376RIEnd">
+						<bpmn2:incoming>toGHF376RI</bpmn2:incoming>
+						<bpmn2:incoming>flowgwGHF376RIEnd</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwGHF376RI_GHF377RI</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:sequenceFlow id="flow_GHF377RI_GHF04CRI" sourceRef="GHF377RI" targetRef="GHF04CRI"/>
+				<bpmn2:serviceTask id="GHF377RI" name="GHF377RI">
+						<bpmn2:incoming>flow_gwGHF376RI_GHF377RI</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF377RI_GHF04CRI</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF377RIIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_GHF04CRI_GHF376RO" sourceRef="GHF04CRI" targetRef="GHF376RO"/>
+				<bpmn2:serviceTask id="GHF04CRI" name="GHF04CRI">
+						<bpmn2:incoming>flow_GHF377RI_GHF04CRI</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF04CRI_GHF376RO</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF04CRIIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_GHF376RO_GHF377RO" sourceRef="GHF376RO" targetRef="GHF377RO"/>
+				<bpmn2:serviceTask id="GHF376RO" name="GHF376RO">
+						<bpmn2:incoming>flow_GHF04CRI_GHF376RO</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF376RO_GHF377RO</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF376ROIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_GHF377RO_GHF04CRO" sourceRef="GHF377RO" targetRef="GHF04CRO"/>
+				<bpmn2:serviceTask id="GHF377RO" name="GHF377RO">
+						<bpmn2:incoming>flow_GHF376RO_GHF377RO</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF377RO_GHF04CRO</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF377ROIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="GHF04CRO" name="GHF04CRO">
+						<bpmn2:incoming>flow_GHF377RO_GHF04CRO</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF04CROIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="GHF04CRO" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

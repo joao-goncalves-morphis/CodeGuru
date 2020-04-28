@@ -1,0 +1,19 @@
+ {
+	"id": "EGH717PY",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "DUMPPPSA",
+			"type": "Task",
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "undefined",
+			"elements": [
+				 {
+					"id": "BACKUPA",
+					"type": "Parameter",
+					"value": "FGHM71(+01)"
+				}
+			]
+		}
+	]
+}

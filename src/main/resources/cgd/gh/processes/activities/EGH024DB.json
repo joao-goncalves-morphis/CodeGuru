@@ -1,0 +1,64 @@
+ {
+	"id": "EGH024DB",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ480A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ480A",
+					"type": "Task",
+					"actionClass": "Pghq480a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FWK480",
+							"type": "Parameter",
+							"value": "FWK480"
+						},
+						 {
+							"id": "FWK481",
+							"type": "Parameter",
+							"value": "FWK481"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ480A",
+					"type": "Flow",
+					"condition": "EGH024DB = 0",
+					"target": "PGHQ480A"
+				}
+			]
+		},
+		 {
+			"id": "PGHQ490A",
+			"type": "Task",
+			"actionClass": "Pghq490a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FGH870",
+					"type": "Parameter",
+					"value": "FGH870"
+				},
+				 {
+					"id": "FWK490",
+					"type": "Parameter",
+					"value": "FWK490"
+				}
+			]
+		}
+	]
+}

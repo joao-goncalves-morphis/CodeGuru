@@ -1,0 +1,24 @@
+ {
+	"id": "EGH032DB",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF170DL",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF170DL",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "delete"
+				},
+				 {
+					"id": "toGHF170DL",
+					"type": "Flow",
+					"condition": "EGH032DB = 0",
+					"target": "GHF170DL"
+				}
+			]
+		}
+	]
+}

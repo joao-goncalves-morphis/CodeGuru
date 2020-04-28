@@ -1,0 +1,91 @@
+ {
+	"id": "EHO115DI",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPHOCD95A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PHOCD95A",
+					"type": "Task",
+					"actionClass": "Phocd95a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FHO90D",
+							"type": "Parameter",
+							"value": "FHO90D"
+						},
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK46B",
+							"type": "Parameter",
+							"value": "FWK46B"
+						},
+						 {
+							"id": "FWK982",
+							"type": "Parameter",
+							"value": "FWK982"
+						}
+					]
+				},
+				 {
+					"id": "toPHOCD95A",
+					"type": "Flow",
+					"condition": "EHO115DI = 0",
+					"target": "PHOCD95A"
+				}
+			]
+		},
+		 {
+			"id": "PHOC709A",
+			"type": "Task",
+			"actionClass": "Phoc709a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FHO251",
+					"type": "Parameter",
+					"value": "FHO251"
+				},
+				 {
+					"id": "FHO252",
+					"type": "Parameter",
+					"value": "FHO252"
+				},
+				 {
+					"id": "FHO709",
+					"type": "Parameter",
+					"value": "FHO709"
+				},
+				 {
+					"id": "FHT011",
+					"type": "Parameter",
+					"value": "FHT011"
+				},
+				 {
+					"id": "FWK986",
+					"type": "Parameter",
+					"value": "FWK986"
+				}
+			]
+		},
+		 {
+			"id": "HOF709RI",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "HOF709RO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

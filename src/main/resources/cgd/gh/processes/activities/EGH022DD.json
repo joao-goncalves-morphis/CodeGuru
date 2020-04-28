@@ -1,0 +1,59 @@
+ {
+	"id": "EGH022DD",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ292A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ292A",
+					"type": "Task",
+					"actionClass": "Pghq292a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FGH502",
+							"type": "Parameter",
+							"value": "FGH502"
+						},
+						 {
+							"id": "FWK292",
+							"type": "Parameter",
+							"value": "FWK292"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ292A",
+					"type": "Flow",
+					"condition": "EGH022DD = 0",
+					"target": "PGHQ292A"
+				}
+			]
+		},
+		 {
+			"id": "GHF502CD",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF502RO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF502DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		}
+	]
+}
