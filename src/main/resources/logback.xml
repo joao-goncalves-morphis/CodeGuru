@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- use Spring default values -->
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>utf8</charset>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="Console" />
+	</root>
+
+	<logger name="morphis.framework" level="INFO" />
+
+	<logger name="morphis.framework.localization.ResourceBundleLocalizationSource" level="ERROR" />
+	
+	<!-- applicational trace messages -->
+	<logger name="morphis.framework.configuration.Message" level="TRACE" />
+</configuration>

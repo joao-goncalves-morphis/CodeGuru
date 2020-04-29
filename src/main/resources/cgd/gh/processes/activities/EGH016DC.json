@@ -1,0 +1,99 @@
+ {
+	"id": "EGH016DC",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ523A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ523A",
+					"type": "Task",
+					"actionClass": "Pghq523a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FGH506",
+							"type": "Parameter",
+							"value": "FGH506"
+						},
+						 {
+							"id": "FWK096",
+							"type": "Parameter",
+							"value": "FWK096"
+						},
+						 {
+							"id": "FWK503",
+							"type": "Parameter",
+							"value": "FWK503"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ523A",
+					"type": "Flow",
+					"condition": "EGH016DC = 0",
+					"target": "PGHQ523A"
+				}
+			]
+		},
+		 {
+			"id": "PGHC503A",
+			"type": "Task",
+			"actionClass": "Pghc503a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FWK500",
+					"type": "Parameter",
+					"value": "FWK500"
+				},
+				 {
+					"id": "FWK504",
+					"type": "Parameter",
+					"value": "FWK504"
+				}
+			]
+		},
+		 {
+			"id": "gwGHF506CD",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF506CD",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF506CD",
+					"type": "Flow",
+					"condition": "EGH016DC = 0",
+					"target": "GHF506CD"
+				}
+			]
+		},
+		 {
+			"id": "GHF506RO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF506DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		}
+	]
+}

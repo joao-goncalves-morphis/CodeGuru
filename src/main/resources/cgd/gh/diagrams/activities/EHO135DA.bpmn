@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EHO135DA" id="EHO135DA" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EHO135DA" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwPHOQE05A"/>
+				<bpmn2:sequenceFlow id="flowgwPHOQE05AEnd" sourceRef="gwPHOQE05A" targetRef="gwPHOQE05AEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwPHOQE05A" name="gwPHOQE05A">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwPHOQE05AEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwPHOQE05A_PHOQE05A" sourceRef="gwPHOQE05A" targetRef="PHOQE05A"/>
+				<bpmn2:sequenceFlow id="toPHOQE05A" sourceRef="PHOQE05A" targetRef="gwPHOQE05AEnd"/>
+				<bpmn2:serviceTask id="PHOQE05A" name="PHOQE05A">
+						<bpmn2:incoming>flow_gwPHOQE05A_PHOQE05A</bpmn2:incoming>
+						<bpmn2:outgoing>toPHOQE05A</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PHOQE05AIOSpec">
+								<bpmn2:dataInput id="pFHT011" name="pFHT011"/>
+								<bpmn2:dataInput id="pFWK266" name="pFWK266"/>
+								<bpmn2:inputSet id="PHOQE05AInputSet" name="PHOQE05AInputSet">
+										<bpmn2:dataInputRefs>pFHT011</bpmn2:dataInputRefs>
+										<bpmn2:dataInputRefs>pFWK266</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFWK60B" name="pFWK60B"/>
+								<bpmn2:outputSet id="PHOQE05AOutputSet" name="PHOQE05AOutputSet">
+										<bpmn2:dataOutputRefs>pFWK60B</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="FHT011InputAssoc">
+								<bpmn2:sourceRef>RefFHT011</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFHT011</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataInputAssociation id="FWK266InputAssoc">
+								<bpmn2:sourceRef>RefFWK266</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFWK266</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FWK60BOutputAssoc">
+								<bpmn2:sourceRef>pFWK60B</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFWK60B</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwPHOQE05A_PHOQE06A" sourceRef="gwPHOQE05AEnd" targetRef="PHOQE06A"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwPHOQE05AEnd" name="gwPHOQE05AEnd">
+						<bpmn2:incoming>toPHOQE05A</bpmn2:incoming>
+						<bpmn2:incoming>flowgwPHOQE05AEnd</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwPHOQE05A_PHOQE06A</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:dataObject id="FHO03E" name="PGBBANC.FHO03E.PDHOHOV1"/>
+				<bpmn2:dataObjectReference dataObjectRef="FHO03E" id="RefFHO03E" name="PGBBANC.FHO03E.PDHOHOV1"/>
+				<bpmn2:dataObject id="FHT011" name="PGBBANC.FHT011"/>
+				<bpmn2:dataObjectReference dataObjectRef="FHT011" id="RefFHT011" name="PGBBANC.FHT011"/>
+				<bpmn2:dataObject id="FWK61B" name="PGBBANC.FWK61B.EHO135DA"/>
+				<bpmn2:dataObjectReference dataObjectRef="FWK61B" id="RefFWK61B" name="PGBBANC.FWK61B.EHO135DA"/>
+				<bpmn2:sequenceFlow id="flow_PHOQE06A_HHF001ST" sourceRef="PHOQE06A" targetRef="HHF001ST"/>
+				<bpmn2:serviceTask id="PHOQE06A" name="PHOQE06A">
+						<bpmn2:incoming>flow_gwPHOQE05A_PHOQE06A</bpmn2:incoming>
+						<bpmn2:outgoing>flow_PHOQE06A_HHF001ST</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PHOQE06AIOSpec">
+								<bpmn2:dataInput id="pFHT011" name="pFHT011"/>
+								<bpmn2:dataInput id="pFWK61B" name="pFWK61B"/>
+								<bpmn2:inputSet id="PHOQE06AInputSet" name="PHOQE06AInputSet">
+										<bpmn2:dataInputRefs>pFHT011</bpmn2:dataInputRefs>
+										<bpmn2:dataInputRefs>pFWK61B</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFHO03E" name="pFHO03E"/>
+								<bpmn2:outputSet id="PHOQE06AOutputSet" name="PHOQE06AOutputSet">
+										<bpmn2:dataOutputRefs>pFHO03E</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="FHT011InputAssoc">
+								<bpmn2:sourceRef>RefFHT011</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFHT011</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataInputAssociation id="FWK61BInputAssoc">
+								<bpmn2:sourceRef>RefFWK61B</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFWK61B</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FHO03EOutputAssoc">
+								<bpmn2:sourceRef>pFHO03E</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFHO03E</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_HHF001ST_HHF002ST" sourceRef="HHF001ST" targetRef="HHF002ST"/>
+				<bpmn2:serviceTask id="HHF001ST" name="HHF001ST">
+						<bpmn2:incoming>flow_PHOQE06A_HHF001ST</bpmn2:incoming>
+						<bpmn2:outgoing>flow_HHF001ST_HHF002ST</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="HHF001STIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="HHF002ST" name="HHF002ST">
+						<bpmn2:incoming>flow_HHF001ST_HHF002ST</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="HHF002STIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="HHF002ST" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

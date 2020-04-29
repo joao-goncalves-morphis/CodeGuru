@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH011DC" id="EGH011DC" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH011DC" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwGHF020CD"/>
+				<bpmn2:sequenceFlow id="flowgwGHF020CDEnd" sourceRef="gwGHF020CD" targetRef="gwGHF020CDEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwGHF020CD" name="gwGHF020CD">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwGHF020CDEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwGHF020CD_GHF020CD" sourceRef="gwGHF020CD" targetRef="GHF020CD"/>
+				<bpmn2:sequenceFlow id="toGHF020CD" sourceRef="GHF020CD" targetRef="gwGHF020CDEnd"/>
+				<bpmn2:serviceTask id="GHF020CD" name="GHF020CD">
+						<bpmn2:incoming>flow_gwGHF020CD_GHF020CD</bpmn2:incoming>
+						<bpmn2:outgoing>toGHF020CD</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF020CDIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwGHF020CD_GHF020PD" sourceRef="gwGHF020CDEnd" targetRef="GHF020PD"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwGHF020CDEnd" name="gwGHF020CDEnd">
+						<bpmn2:incoming>toGHF020CD</bpmn2:incoming>
+						<bpmn2:incoming>flowgwGHF020CDEnd</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwGHF020CD_GHF020PD</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:sequenceFlow id="flow_GHF020PD_GHF021CD" sourceRef="GHF020PD" targetRef="GHF021CD"/>
+				<bpmn2:serviceTask id="GHF020PD" name="GHF020PD">
+						<bpmn2:incoming>flow_gwGHF020CD_GHF020PD</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF020PD_GHF021CD</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF020PDIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_GHF021CD_GHF021PD" sourceRef="GHF021CD" targetRef="GHF021PD"/>
+				<bpmn2:serviceTask id="GHF021CD" name="GHF021CD">
+						<bpmn2:incoming>flow_GHF020PD_GHF021CD</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF021CD_GHF021PD</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF021CDIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="GHF021PD" name="GHF021PD">
+						<bpmn2:incoming>flow_GHF021CD_GHF021PD</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF021PDIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="GHF021PD" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

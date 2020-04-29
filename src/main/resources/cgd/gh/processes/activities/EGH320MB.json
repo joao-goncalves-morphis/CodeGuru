@@ -1,0 +1,36 @@
+ {
+	"id": "EGH320MB",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHA320D1",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHA320D1",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHA320D1",
+					"type": "Flow",
+					"condition": "EGH320MB = 0",
+					"target": "GHA320D1"
+				}
+			]
+		},
+		 {
+			"id": "GHA320D2",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHA320B9",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		}
+	]
+}

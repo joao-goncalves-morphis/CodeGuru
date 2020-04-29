@@ -1,0 +1,36 @@
+ {
+	"id": "EGH032DC",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ227A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ227A",
+					"type": "Task",
+					"actionClass": "Pghq227a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK001",
+							"type": "Parameter",
+							"value": "FWK001"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ227A",
+					"type": "Flow",
+					"condition": "EGH032DC = 0",
+					"target": "PGHQ227A"
+				}
+			]
+		}
+	]
+}

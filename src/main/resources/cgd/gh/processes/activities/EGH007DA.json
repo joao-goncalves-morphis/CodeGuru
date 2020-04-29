@@ -1,0 +1,31 @@
+ {
+	"id": "EGH007DA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ301A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ301A",
+					"type": "Task",
+					"actionClass": "Pghq301a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ301A",
+					"type": "Flow",
+					"condition": "EGH007DA = 0",
+					"target": "PGHQ301A"
+				}
+			]
+		}
+	]
+}

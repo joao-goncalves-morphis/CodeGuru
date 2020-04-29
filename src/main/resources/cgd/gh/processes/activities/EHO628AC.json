@@ -1,0 +1,63 @@
+ {
+	"id": "EHO628AC",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwEHF512RO",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "EHF512RO",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toEHF512RO",
+					"type": "Flow",
+					"condition": "EHO628AC = 0",
+					"target": "EHF512RO"
+				}
+			]
+		},
+		 {
+			"id": "PHOQ237A",
+			"type": "Task",
+			"actionClass": "Phoq237a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FHT011",
+					"type": "Parameter",
+					"value": "FHT011"
+				},
+				 {
+					"id": "FWK040",
+					"type": "Parameter",
+					"value": "FWK040"
+				},
+				 {
+					"id": "FWK053",
+					"type": "Parameter",
+					"value": "FWK053"
+				},
+				 {
+					"id": "FWK376",
+					"type": "Parameter",
+					"value": "FWK376"
+				},
+				 {
+					"id": "FWK502",
+					"type": "Parameter",
+					"value": "FWK502"
+				}
+			]
+		},
+		 {
+			"id": "EHF512R2",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

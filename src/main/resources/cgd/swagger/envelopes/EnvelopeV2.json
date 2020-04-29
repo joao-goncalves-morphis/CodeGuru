@@ -1,0 +1,599 @@
+ {
+    "swagger": "2.0",
+    "info": {
+        "description": "Documentação de serviços",
+        "version": "v01",
+        "title": "Serviços de OffLoading de Consultas de Central"
+    },
+    "definitions": {
+        "CgdHeaderV2": {
+            "type": "object",
+            "properties": {
+                "qCterCmptMsg": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iTipoOrigTrnz": {
+                    "type": "string"
+                },
+                "zSessao": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "hSessao": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iOfflPlgd": {
+                    "type": "string"
+                },
+                "iTipoTrnzBbn": {
+                    "type": "string"
+                }
+            }
+        },
+        "CgdMessageV2": {
+            "allOf": [
+                 {
+                    "$ref": "#/definitions/Mensagem"
+                }
+            ]
+        },
+        "Mensagem": {
+            "type": "object",
+            "properties": {
+                "cTransaccao": {
+                    "type": "string"
+                },
+                "aAplicacao": {
+                    "type": "string"
+                },
+                "cOpePcnp": {
+                    "type": "string"
+                },
+                "xChavOpePcnp": {
+                    "type": "string"
+                },
+                "cTipoCanlAces": {
+                    "type": "string"
+                },
+                "nEltnJourBbn": {
+                    "$ref": "#/definitions/NEltnJourBbn"
+                },
+                "cTermPcnp": {
+                    "type": "string"
+                },
+                "nSessTermPcnp": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "tsTrnzLocl": {
+                    "type": "string"
+                },
+                "tsInicPrctCtrl": {
+                    "type": "string"
+                },
+                "tsFimPrctCtrl": {
+                    "type": "string"
+                },
+                "iTrnzEfcdOnln": {
+                    "type": "string"
+                },
+                "iAccao": {
+                    "type": "string"
+                },
+                "iCslzTrnz": {
+                    "type": "string"
+                },
+                "cEstPrctReg": {
+                    "type": "string"
+                },
+                "cTipSteOpePcnp": {
+                    "type": "string"
+                },
+                "xIdSpteOpePcnp": {
+                    "type": "string"
+                },
+                "cPaisIsoaCont": {
+                    "type": "string"
+                },
+                "cBancCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cOeEgcCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsRdclCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vChkdCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTipoCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cMoedIsoScta": {
+                    "type": "string"
+                },
+                "nsDeposito": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cBancSwif": {
+                    "type": "string"
+                },
+                "mSldoCblo": {
+                    "type": "number"
+                },
+                "mSldoDpnl": {
+                    "type": "number"
+                },
+                "mSldoAtrd": {
+                    "type": "number"
+                },
+                "zMovimento": {
+                    "type": "string"
+                },
+                "zValor": {
+                    "type": "string"
+                },
+                "zCtlzJourBbn": {
+                    "type": "string"
+                },
+                "cMoedIsoMov": {
+                    "type": "string"
+                },
+                "mMovimento": {
+                    "type": "number"
+                },
+                "cOpczMenu": {
+                    "type": "string"
+                },
+                "nCliente": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsAbraCli": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cGranCli": {
+                    "type": "string"
+                },
+                "cSegmCrm": {
+                    "type": "string"
+                },
+                "campoLivre1": {
+                    "$ref": "#/definitions/CampoLivre1"
+                },
+                "campoLivre2": {
+                    "type": "number"
+                },
+                "campoLivre3": {
+                    "$ref": "#/definitions/CampoLivre3"
+                },
+                "campoLivre4": {
+                    "$ref": "#/definitions/CampoLivre4"
+                },
+                "campoLivre5": {
+                    "$ref": "#/definitions/CampoLivre5"
+                },
+                "cTipoCli": {
+                    "type": "string"
+                },
+                "iAccao01": {
+                    "type": "string"
+                },
+                "iTrnzSimz": {
+                    "type": "string"
+                },
+                "iCnslLog": {
+                    "type": "string"
+                },
+                "iAlerta": {
+                    "type": "string"
+                },
+                "campoLivre8": {
+                    "$ref": "#/definitions/CampoLivre8"
+                },
+                "campoLivre9": {
+                    "$ref": "#/definitions/CampoLivre9"
+                },
+                "campoLivre10": {
+                    "$ref": "#/definitions/CampoLivre10"
+                },
+                "iDebug": {
+                    "type": "string"
+                },
+                "campoLivre11": {
+                    "$ref": "#/definitions/CampoLivre11"
+                },
+                "campoLivre12": {
+                    "$ref": "#/definitions/CampoLivre12"
+                },
+                "cFamiProd": {
+                    "type": "string"
+                },
+                "cProduto": {
+                    "type": "string"
+                },
+                "cEvenOpel": {
+                    "type": "string"
+                },
+                "cOpeBbn": {
+                    "type": "string"
+                },
+                "cCpltMvopIcb": {
+                    "type": "string"
+                },
+                "xIdMovCriv": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iEstorno": {
+                    "type": "string"
+                },
+                "xChvOpePcnpOri": {
+                    "type": "string"
+                },
+                "cPaisIsoaOeEsn": {
+                    "type": "string"
+                },
+                "cMnemEgcEstn": {
+                    "type": "string"
+                },
+                "cOeEgcEstn": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nJourBbnTrnEsn": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cUsidEstn": {
+                    "type": "string"
+                },
+                "aAplErro": {
+                    "type": "string"
+                },
+                "cTipoErroBbn": {
+                    "type": "string"
+                },
+                "cRtnoSwal": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cLclzErroPrg": {
+                    "type": "string"
+                },
+                "nmPrgErro": {
+                    "type": "string"
+                },
+                "xInfCplrErro": {
+                    "type": "string"
+                },
+                "cRtnoSwalPcnp": {
+                    "type": "string"
+                },
+                "nsVersMsg": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "qCterCmpMsgInp": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "NEltnJourBbn": {
+            "type": "object",
+            "properties": {
+                "zProcessamento": {
+                    "type": "string"
+                },
+                "cPaisIsoaOeOpx": {
+                    "type": "string"
+                },
+                "cMnemEgcOpex": {
+                    "type": "string"
+                },
+                "cOeEgcOpex": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cUserid": {
+                    "type": "string"
+                },
+                "nJourBbn": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CampoLivre1": {
+            "type": "object",
+            "properties": {
+                "iTrcdLst": {
+                    "type": "number"
+                }
+            }
+        },
+        "CampoLivre3": {
+            "type": "object",
+            "properties": {
+                "cPaisIsoaOeOri": {
+                    "type": "string"
+                },
+                "cMnemEgcOrig": {
+                    "type": "string"
+                },
+                "cOeEgcOrig": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CampoLivre4": {
+            "type": "object",
+            "properties": {
+                "cUsidVrtl": {
+                    "type": "string"
+                },
+                "aAplCanl": {
+                    "type": "string"
+                }
+            }
+        },
+        "CampoLivre5": {
+            "type": "object",
+            "properties": {
+                "iTrnzCblo": {
+                    "type": "string"
+                }
+            }
+        },
+        "CampoLivre8": {
+            "type": "object",
+            "properties": {
+                "iPedDad": {
+                    "type": "string"
+                },
+                "iTruncFu": {
+                    "type": "string"
+                }
+            }
+        },
+        "CampoLivre9": {
+            "type": "object",
+            "properties": {
+                "nsSessao": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iExiAtzJourBbn": {
+                    "type": "string"
+                },
+                "zPrctJourBbn": {
+                    "type": "string"
+                },
+                "cPaisIsoAlfn": {
+                    "type": "string"
+                },
+                "cMnemEgcUtl": {
+                    "type": "string"
+                },
+                "cIdioIso": {
+                    "type": "string"
+                },
+                "cPerfUtlBbn": {
+                    "type": "string"
+                },
+                "iAcesContStff": {
+                    "type": "string"
+                },
+                "cUsidAlcl": {
+                    "type": "string"
+                },
+                "ctNvlAtzBbnLcl": {
+                    "type": "string"
+                },
+                "nEmpregado": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CampoLivre10": {
+            "type": "object",
+            "properties": {
+                "cUsidAcrl": {
+                    "type": "string"
+                },
+                "ctNvlAtzBbnCrl": {
+                    "type": "string"
+                },
+                "iUtlGerxCli": {
+                    "type": "string"
+                },
+                "iUtlGerxCont": {
+                    "type": "string"
+                },
+                "cBancoOrig": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cPaisIsaOeAcrl": {
+                    "type": "string"
+                },
+                "cMnemEgcAcrl": {
+                    "type": "string"
+                },
+                "cOeEgcAcrl": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTermAcrl": {
+                    "type": "string"
+                },
+                "cPaisIsaOeAlcl": {
+                    "type": "string"
+                },
+                "cMnemEgcAlcl": {
+                    "type": "string"
+                },
+                "cOeEgcAlcl": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTermAlcl": {
+                    "type": "string"
+                },
+                "cPltfLocl": {
+                    "type": "string"
+                },
+                "cMoedPaisOper": {
+                    "type": "string"
+                }
+            }
+        },
+        "CampoLivre11": {
+            "type": "object",
+            "properties": {
+                "qCampEstTrnz": {
+                    "type": "number"
+                }
+            }
+        },
+        "CampoLivre12": {
+            "type": "object",
+            "properties": {
+                "ctNvelAtrzBbn": {
+                    "type": "string"
+                }
+            }
+        },
+        "CgdFooterV2": {
+            "type": "object",
+            "properties": {
+                "cTerminal": {
+                    "type": "string"
+                },
+                "nsJourBbn": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "assyncrono": {
+                    "$ref": "#/definitions/Assyncrono"
+                },
+                "cImgTabJour": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iTabJourMov": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "chvTabErro": {
+                    "type": "string"
+                },
+                "cEibfn": {
+                    "type": "string"
+                },
+                "cEibrcode": {
+                    "type": "string"
+                },
+                "cEibrsrce": {
+                    "type": "string"
+                },
+                "db2Log": {
+                    "$ref": "#/definitions/Db2Log"
+                },
+                "cEibresp": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "Assyncrono": {
+            "type": "object",
+            "properties": {
+                "iTipoPrctTrnz": {
+                    "type": "string"
+                },
+                "xAligTrnzAsin": {
+                    "type": "string"
+                }
+            }
+        },
+        "Db2Log": {
+            "type": "object",
+            "properties": {
+                "nmTabela": {
+                    "type": "string"
+                },
+                "sqlca": {
+                    "$ref": "#/definitions/Sqlca"
+                }
+            }
+        },
+        "Sqlca": {
+            "type": "object",
+            "properties": {
+                "xSqlcaid": {
+                    "type": "string"
+                },
+                "qSqlcabc": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cSqlcode": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "qSqlerrml": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "xSqlerrmc": {
+                    "type": "string"
+                },
+                "cSqlerrd": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iSqlwarn0": {
+                    "type": "string"
+                },
+                "iSqlwarn1": {
+                    "type": "string"
+                },
+                "iSqlwarn2": {
+                    "type": "string"
+                },
+                "iSqlwarn3": {
+                    "type": "string"
+                },
+                "iSqlwarn4": {
+                    "type": "string"
+                },
+                "iSqlwarn5": {
+                    "type": "string"
+                },
+                "iSqlwarn6": {
+                    "type": "string"
+                },
+                "iSqlwarn7": {
+                    "type": "string"
+                },
+                "xSqlext": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

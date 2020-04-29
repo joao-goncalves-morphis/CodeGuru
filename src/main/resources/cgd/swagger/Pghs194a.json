@@ -1,0 +1,861 @@
+ {
+    "swagger": "2.0",
+    "info": {
+        "description": "Documentação de serviços",
+        "version": "v01",
+        "title": "Serviços de OffLoading de Consultas de Central"
+    },
+    "host": "udc6001wai03:12103",
+    "basePath": "/",
+    "tags": [
+         {
+            "name": "Consultas de Central (serviços unitários)",
+            "description": "REST endpoint"
+        }
+    ],
+    "paths": {
+        "/pghs194a": {
+            "post": {
+                "tags": [
+                    "APLICACAO : GH - HISTORICO DE MOVIMENTOS"
+                ],
+                "summary": "Pghs194a - Carregamento de Pedidos de Informacao * NOTA : pedidos com mais de 2 anos so permite carregar um por conta",
+                "operationId": "invoke_pghs194aUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                     {
+                        "in": "body",
+                        "name": "input",
+                        "description": "input",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Input"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Output"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Input": {
+            "allOf": [
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdHeaderV1"
+                },
+                 {
+                    "$ref": "#/definitions/InputMessage"
+                },
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdFooterV1"
+                }
+            ],
+            "title": "Pghs194a Input envelope"
+        },
+        "Output": {
+            "allOf": [
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdHeaderV1"
+                },
+                 {
+                    "$ref": "#/definitions/OutputMessage"
+                },
+                 {
+                    "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdFooterV1"
+                }
+            ],
+            "title": "Pghs194a Output envelope"
+        },
+        "Bghm1190": {
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                 {
+                    "$ref": "#/definitions/MsgIn"
+                }
+            ]
+        },
+        "MsgIn": {
+            "type": "object",
+            "properties": {
+                "ase": {
+                    "$ref": "#/definitions/AseIn"
+                },
+                "ade": {
+                    "$ref": "#/definitions/AdeIn"
+                }
+            }
+        },
+        "AseIn": {
+            "type": "object",
+            "properties": {
+                "cPaisIsoaContSt": {
+                    "$ref": "#/definitions/CPaisIsoaContStIn"
+                },
+                "cBancContSt": {
+                    "$ref": "#/definitions/CBancContStIn"
+                },
+                "cOeEgcContSt": {
+                    "$ref": "#/definitions/COeEgcContStIn"
+                },
+                "nsRdclContSt": {
+                    "$ref": "#/definitions/NsRdclContStIn"
+                },
+                "vChkdContSt": {
+                    "$ref": "#/definitions/VChkdContStIn"
+                },
+                "cTipoContSt": {
+                    "$ref": "#/definitions/CTipoContStIn"
+                },
+                "cMoedIsoSctaSt": {
+                    "$ref": "#/definitions/CMoedIsoSctaStIn"
+                },
+                "nsDepositoSt": {
+                    "$ref": "#/definitions/NsDepositoStIn"
+                },
+                "linhaSt": {
+                    "$ref": "#/definitions/LinhaStIn"
+                }
+            }
+        },
+        "CPaisIsoaContStIn": {
+            "type": "object",
+            "properties": {
+                "cPaisIsoaContS": {
+                    "type": "string"
+                },
+                "cPaisIsoaContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CBancContStIn": {
+            "type": "object",
+            "properties": {
+                "cBancContS": {
+                    "type": "string"
+                },
+                "cBancContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "COeEgcContStIn": {
+            "type": "object",
+            "properties": {
+                "cOeEgcContS": {
+                    "type": "string"
+                },
+                "cOeEgcContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "NsRdclContStIn": {
+            "type": "object",
+            "properties": {
+                "nsRdclContS": {
+                    "type": "string"
+                },
+                "nsRdclContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "VChkdContStIn": {
+            "type": "object",
+            "properties": {
+                "vChkdContS": {
+                    "type": "string"
+                },
+                "vChkdContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CTipoContStIn": {
+            "type": "object",
+            "properties": {
+                "cTipoContS": {
+                    "type": "string"
+                },
+                "cTipoContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CMoedIsoSctaStIn": {
+            "type": "object",
+            "properties": {
+                "cMoedIsoSctaS": {
+                    "type": "string"
+                },
+                "cMoedIsoSctaM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "NsDepositoStIn": {
+            "type": "object",
+            "properties": {
+                "nsDepositoS": {
+                    "type": "string"
+                },
+                "nsDepositoM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "LinhaStIn": {
+            "type": "object",
+            "properties": {
+                "nClienteSt": {
+                    "$ref": "#/definitions/NClienteStIn"
+                }
+            }
+        },
+        "NClienteStIn": {
+            "type": "object",
+            "properties": {
+                "nClienteS": {
+                    "type": "string"
+                },
+                "nClienteM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "AdeIn": {
+            "type": "object",
+            "properties": {
+                "scta": {
+                    "$ref": "#/definitions/SctaIn"
+                },
+                "nsMovimento": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "dadosGarantia": {
+                    "$ref": "#/definitions/DadosGarantiaIn"
+                },
+                "solicitador": {
+                    "$ref": "#/definitions/SolicitadorIn"
+                },
+                "registo": {
+                    "$ref": "#/definitions/RegistoIn"
+                },
+                "ultAlteracao": {
+                    "$ref": "#/definitions/UltAlteracaoIn"
+                },
+                "iTodosTitAbgd": {
+                    "type": "string"
+                },
+                "chaveContinuacao": {
+                    "$ref": "#/definitions/ChaveContinuacaoIn"
+                },
+                "linha": {
+                    "$ref": "#/definitions/LinhaIn"
+                }
+            }
+        },
+        "SctaIn": {
+            "type": "object",
+            "properties": {
+                "cPaisIsoaCont": {
+                    "type": "string"
+                },
+                "cBancCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cOeEgcCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsRdclCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vChkdCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTipoCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cMoedIsoScta": {
+                    "type": "string"
+                },
+                "nsDeposito": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "DadosGarantiaIn": {
+            "type": "object",
+            "properties": {
+                "zMovimento": {
+                    "type": "string"
+                },
+                "xRefMov": {
+                    "type": "string"
+                },
+                "mMontanteMov": {
+                    "type": "number"
+                },
+                "cMoedMov": {
+                    "type": "string"
+                },
+                "mMontanteExt": {
+                    "type": "number"
+                },
+                "cMoedExt": {
+                    "type": "string"
+                },
+                "cCarExt": {
+                    "type": "string"
+                },
+                "zIniGarantia": {
+                    "type": "string"
+                },
+                "zFimGarantia": {
+                    "type": "string"
+                }
+            }
+        },
+        "SolicitadorIn": {
+            "type": "object",
+            "properties": {
+                "nsIntSol": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nClienteSol": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nmCliAbvSol": {
+                    "type": "string"
+                },
+                "cTipoSol": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "RegistoIn": {
+            "type": "object",
+            "properties": {
+                "nUtlInsGt": {
+                    "type": "string"
+                },
+                "zInsGt": {
+                    "type": "string"
+                },
+                "hInsGt": {
+                    "type": "string"
+                }
+            }
+        },
+        "UltAlteracaoIn": {
+            "type": "object",
+            "properties": {
+                "nUtlUltAlt": {
+                    "type": "string"
+                },
+                "zUltAlt": {
+                    "type": "string"
+                },
+                "hUltAlt": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChaveContinuacaoIn": {
+            "type": "object",
+            "properties": {
+                "nClientePg": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iTipoItvtPg": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsTitcPg": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "LinhaIn": {
+            "type": "object",
+            "properties": {
+                "iAcczMntzLstaL": {
+                    "type": "string"
+                },
+                "nsItvtL": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iTipoItvtL": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nClienteL": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nmCliAbvdL": {
+                    "type": "string"
+                },
+                "zIniItvtL": {
+                    "type": "string"
+                },
+                "zFimItvtL": {
+                    "type": "string"
+                },
+                "iTitcExsGar": {
+                    "type": "string"
+                }
+            }
+        },
+        "Bghm1191": {
+            "type": "object",
+            "properties": {
+            },
+            "allOf": [
+                 {
+                    "$ref": "#/definitions/MsgOut"
+                }
+            ]
+        },
+        "MsgOut": {
+            "type": "object",
+            "properties": {
+                "ase": {
+                    "$ref": "#/definitions/AseOut"
+                },
+                "ade": {
+                    "$ref": "#/definitions/AdeOut"
+                }
+            }
+        },
+        "AseOut": {
+            "type": "object",
+            "properties": {
+                "cPaisIsoaContSt": {
+                    "$ref": "#/definitions/CPaisIsoaContStOut"
+                },
+                "cBancContSt": {
+                    "$ref": "#/definitions/CBancContStOut"
+                },
+                "cOeEgcContSt": {
+                    "$ref": "#/definitions/COeEgcContStOut"
+                },
+                "nsRdclContSt": {
+                    "$ref": "#/definitions/NsRdclContStOut"
+                },
+                "vChkdContSt": {
+                    "$ref": "#/definitions/VChkdContStOut"
+                },
+                "cTipoContSt": {
+                    "$ref": "#/definitions/CTipoContStOut"
+                },
+                "cMoedIsoSctaSt": {
+                    "$ref": "#/definitions/CMoedIsoSctaStOut"
+                },
+                "nsDepositoSt": {
+                    "$ref": "#/definitions/NsDepositoStOut"
+                },
+                "linhaSt": {
+                    "$ref": "#/definitions/LinhaStOut"
+                }
+            }
+        },
+        "CPaisIsoaContStOut": {
+            "type": "object",
+            "properties": {
+                "cPaisIsoaContS": {
+                    "type": "string"
+                },
+                "cPaisIsoaContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CBancContStOut": {
+            "type": "object",
+            "properties": {
+                "cBancContS": {
+                    "type": "string"
+                },
+                "cBancContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "COeEgcContStOut": {
+            "type": "object",
+            "properties": {
+                "cOeEgcContS": {
+                    "type": "string"
+                },
+                "cOeEgcContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "NsRdclContStOut": {
+            "type": "object",
+            "properties": {
+                "nsRdclContS": {
+                    "type": "string"
+                },
+                "nsRdclContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "VChkdContStOut": {
+            "type": "object",
+            "properties": {
+                "vChkdContS": {
+                    "type": "string"
+                },
+                "vChkdContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CTipoContStOut": {
+            "type": "object",
+            "properties": {
+                "cTipoContS": {
+                    "type": "string"
+                },
+                "cTipoContM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CMoedIsoSctaStOut": {
+            "type": "object",
+            "properties": {
+                "cMoedIsoSctaS": {
+                    "type": "string"
+                },
+                "cMoedIsoSctaM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "NsDepositoStOut": {
+            "type": "object",
+            "properties": {
+                "nsDepositoS": {
+                    "type": "string"
+                },
+                "nsDepositoM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "LinhaStOut": {
+            "type": "object",
+            "properties": {
+                "nClienteSt": {
+                    "$ref": "#/definitions/NClienteStOut"
+                }
+            }
+        },
+        "NClienteStOut": {
+            "type": "object",
+            "properties": {
+                "nClienteS": {
+                    "type": "string"
+                },
+                "nClienteM": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "AdeOut": {
+            "type": "object",
+            "properties": {
+                "scta": {
+                    "$ref": "#/definitions/SctaOut"
+                },
+                "nsMovimento": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "dadosGarantia": {
+                    "$ref": "#/definitions/DadosGarantiaOut"
+                },
+                "solicitador": {
+                    "$ref": "#/definitions/SolicitadorOut"
+                },
+                "registo": {
+                    "$ref": "#/definitions/RegistoOut"
+                },
+                "ultAlteracao": {
+                    "$ref": "#/definitions/UltAlteracaoOut"
+                },
+                "iTodosTitAbgd": {
+                    "type": "string"
+                },
+                "chaveContinuacao": {
+                    "$ref": "#/definitions/ChaveContinuacaoOut"
+                },
+                "linha": {
+                    "$ref": "#/definitions/LinhaOut"
+                }
+            }
+        },
+        "SctaOut": {
+            "type": "object",
+            "properties": {
+                "cPaisIsoaCont": {
+                    "type": "string"
+                },
+                "cBancCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cOeEgcCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsRdclCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "vChkdCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cTipoCont": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "cMoedIsoScta": {
+                    "type": "string"
+                },
+                "nsDeposito": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "DadosGarantiaOut": {
+            "type": "object",
+            "properties": {
+                "zMovimento": {
+                    "type": "string"
+                },
+                "xRefMov": {
+                    "type": "string"
+                },
+                "mMontanteMov": {
+                    "type": "number"
+                },
+                "cMoedMov": {
+                    "type": "string"
+                },
+                "mMontanteExt": {
+                    "type": "number"
+                },
+                "cMoedExt": {
+                    "type": "string"
+                },
+                "cCarExt": {
+                    "type": "string"
+                },
+                "zIniGarantia": {
+                    "type": "string"
+                },
+                "zFimGarantia": {
+                    "type": "string"
+                }
+            }
+        },
+        "SolicitadorOut": {
+            "type": "object",
+            "properties": {
+                "nsIntSol": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nClienteSol": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nmCliAbvSol": {
+                    "type": "string"
+                },
+                "cTipoSol": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "RegistoOut": {
+            "type": "object",
+            "properties": {
+                "nUtlInsGt": {
+                    "type": "string"
+                },
+                "zInsGt": {
+                    "type": "string"
+                },
+                "hInsGt": {
+                    "type": "string"
+                }
+            }
+        },
+        "UltAlteracaoOut": {
+            "type": "object",
+            "properties": {
+                "nUtlUltAlt": {
+                    "type": "string"
+                },
+                "zUltAlt": {
+                    "type": "string"
+                },
+                "hUltAlt": {
+                    "type": "string"
+                }
+            }
+        },
+        "ChaveContinuacaoOut": {
+            "type": "object",
+            "properties": {
+                "nClientePg": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iTipoItvtPg": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nsTitcPg": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "LinhaOut": {
+            "type": "object",
+            "properties": {
+                "iAcczMntzLstaL": {
+                    "type": "string"
+                },
+                "nsItvtL": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "iTipoItvtL": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nClienteL": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nmCliAbvdL": {
+                    "type": "string"
+                },
+                "zIniItvtL": {
+                    "type": "string"
+                },
+                "zFimItvtL": {
+                    "type": "string"
+                },
+                "iTitcExsGarL": {
+                    "type": "string"
+                }
+            }
+        },
+        "InputMessage": {
+            "type": "object",
+            "properties": {
+                "mensagem": {
+                    "allOf": [
+                         {
+                            "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdMessageV1"
+                        }
+                    ],
+                    "properties": {
+                        "msgIn": {
+                            "$ref": "#/definitions/Bghm1190"
+                        }
+                    }
+                }
+            }
+        },
+        "OutputMessage": {
+            "type": "object",
+            "properties": {
+                "mensagem": {
+                    "allOf": [
+                         {
+                            "$ref": "./envelopes/EnvelopeV1.json#/definitions/CgdMessageV1"
+                        }
+                    ],
+                    "properties": {
+                        "msgOut": {
+                            "$ref": "#/definitions/Bghm1191"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
