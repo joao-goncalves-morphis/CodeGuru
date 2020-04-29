@@ -1,0 +1,84 @@
+ {
+	"id": "EGH018DA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF001ST",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF001ST",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF001ST",
+					"type": "Flow",
+					"condition": "EGH018DA = 0",
+					"target": "GHF001ST"
+				}
+			]
+		},
+		 {
+			"id": "gwPGHQ023A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ023A",
+					"type": "Task",
+					"actionClass": "Pghq023a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH300",
+							"type": "Parameter",
+							"value": "FWK300"
+						},
+						 {
+							"id": "FWK020",
+							"type": "Parameter",
+							"value": "FWK020"
+						},
+						 {
+							"id": "FWK201",
+							"type": "Parameter",
+							"value": "FWK201"
+						},
+						 {
+							"id": "FWK301",
+							"type": "Parameter",
+							"value": "FWK301"
+						},
+						 {
+							"id": "FWK401",
+							"type": "Parameter",
+							"value": "FWK401"
+						},
+						 {
+							"id": "FWK501",
+							"type": "Parameter",
+							"value": "FWK501"
+						},
+						 {
+							"id": "FWK601",
+							"type": "Parameter",
+							"value": "FWK601"
+						},
+						 {
+							"id": "FWK701",
+							"type": "Parameter",
+							"value": "FWK701"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ023A",
+					"type": "Flow",
+					"condition": "EGH018DA = 0",
+					"target": "PGHQ023A"
+				}
+			]
+		}
+	]
+}

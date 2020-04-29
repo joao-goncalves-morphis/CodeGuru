@@ -1,0 +1,76 @@
+ {
+	"id": "EHO135DA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPHOQE05A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PHOQE05A",
+					"type": "Task",
+					"actionClass": "Phoqe05a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK266",
+							"type": "Parameter",
+							"value": "FWK266"
+						},
+						 {
+							"id": "FWK60B",
+							"type": "Parameter",
+							"value": "FWK60B"
+						}
+					]
+				},
+				 {
+					"id": "toPHOQE05A",
+					"type": "Flow",
+					"condition": "EHO135DA = 0",
+					"target": "PHOQE05A"
+				}
+			]
+		},
+		 {
+			"id": "PHOQE06A",
+			"type": "Task",
+			"actionClass": "Phoqe06a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FHO03E",
+					"type": "Parameter",
+					"value": "FHO03E"
+				},
+				 {
+					"id": "FHT011",
+					"type": "Parameter",
+					"value": "FHT011"
+				},
+				 {
+					"id": "FWK61B",
+					"type": "Parameter",
+					"value": "FWK61B"
+				}
+			]
+		},
+		 {
+			"id": "HHF001ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "HHF002ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

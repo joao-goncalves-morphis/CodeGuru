@@ -1,0 +1,12 @@
+ {
+	"id": "EGH028DZ",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "GHF028DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "undefined"
+		}
+	]
+}

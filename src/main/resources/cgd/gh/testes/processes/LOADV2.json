@@ -1,0 +1,12 @@
+{
+	"id": "LOADV2",
+	"type" : "Process",
+	"elements":[
+		// CARREGAMENTO DE DADOS DE TESTE - V2 
+		{
+			"id": "BATL010A",
+			"type": "SubProcess",
+			"activity": "BATL010A"
+		}
+	]
+}

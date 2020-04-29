@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EHO008DI" id="EHO008DI" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EHO008DI" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwPHOQF32A"/>
+				<bpmn2:sequenceFlow id="flowgwPHOQF32AEnd" sourceRef="gwPHOQF32A" targetRef="gwPHOQF32AEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwPHOQF32A" name="gwPHOQF32A">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwPHOQF32AEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwPHOQF32A_PHOQF32A" sourceRef="gwPHOQF32A" targetRef="PHOQF32A"/>
+				<bpmn2:sequenceFlow id="toPHOQF32A" sourceRef="PHOQF32A" targetRef="gwPHOQF32AEnd"/>
+				<bpmn2:serviceTask id="PHOQF32A" name="PHOQF32A">
+						<bpmn2:incoming>flow_gwPHOQF32A_PHOQF32A</bpmn2:incoming>
+						<bpmn2:outgoing>toPHOQF32A</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PHOQF32AIOSpec">
+								<bpmn2:dataInput id="pFHT011" name="pFHT011"/>
+								<bpmn2:inputSet id="PHOQF32AInputSet" name="PHOQF32AInputSet">
+										<bpmn2:dataInputRefs>pFHT011</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFWK92E" name="pFWK92E"/>
+								<bpmn2:outputSet id="PHOQF32AOutputSet" name="PHOQF32AOutputSet">
+										<bpmn2:dataOutputRefs>pFWK92E</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="FHT011InputAssoc">
+								<bpmn2:sourceRef>RefFHT011</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFHT011</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FWK92EOutputAssoc">
+								<bpmn2:sourceRef>pFWK92E</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFWK92E</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwPHOQF32A_HOF04CCD" sourceRef="gwPHOQF32AEnd" targetRef="HOF04CCD"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwPHOQF32AEnd" name="gwPHOQF32AEnd">
+						<bpmn2:incoming>toPHOQF32A</bpmn2:incoming>
+						<bpmn2:incoming>flowgwPHOQF32AEnd</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwPHOQF32A_HOF04CCD</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:sequenceFlow id="flow_HOF04CCD_HOF04CRI" sourceRef="HOF04CCD" targetRef="HOF04CRI"/>
+				<bpmn2:serviceTask id="HOF04CCD" name="HOF04CCD">
+						<bpmn2:incoming>flow_gwPHOQF32A_HOF04CCD</bpmn2:incoming>
+						<bpmn2:outgoing>flow_HOF04CCD_HOF04CRI</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="HOF04CCDIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="HOF04CRI" name="HOF04CRI">
+						<bpmn2:incoming>flow_HOF04CCD_HOF04CRI</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="HOF04CRIIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="HOF04CRI" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

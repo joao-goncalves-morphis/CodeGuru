@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH306MB" id="EGH306MB" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH306MB" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwPGHC172A"/>
+				<bpmn2:sequenceFlow id="flowgwPGHC172AEnd" sourceRef="gwPGHC172A" targetRef="gwPGHC172AEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwPGHC172A" name="gwPGHC172A">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwPGHC172AEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwPGHC172A_PGHC172A" sourceRef="gwPGHC172A" targetRef="PGHC172A"/>
+				<bpmn2:sequenceFlow id="toPGHC172A" sourceRef="PGHC172A" targetRef="gwPGHC172AEnd"/>
+				<bpmn2:serviceTask id="PGHC172A" name="PGHC172A">
+						<bpmn2:incoming>flow_gwPGHC172A_PGHC172A</bpmn2:incoming>
+						<bpmn2:outgoing>toPGHC172A</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PGHC172AIOSpec">
+								<bpmn2:dataInput id="pFHT011" name="pFHT011"/>
+								<bpmn2:dataInput id="pFWK005" name="pFWK005"/>
+								<bpmn2:inputSet id="PGHC172AInputSet" name="PGHC172AInputSet">
+										<bpmn2:dataInputRefs>pFHT011</bpmn2:dataInputRefs>
+										<bpmn2:dataInputRefs>pFWK005</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFGH172" name="pFGH172"/>
+								<bpmn2:outputSet id="PGHC172AOutputSet" name="PGHC172AOutputSet">
+										<bpmn2:dataOutputRefs>pFGH172</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="FHT011InputAssoc">
+								<bpmn2:sourceRef>RefFHT011</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFHT011</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataInputAssociation id="FWK005InputAssoc">
+								<bpmn2:sourceRef>RefFWK005</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFWK005</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FGH172OutputAssoc">
+								<bpmn2:sourceRef>pFGH172</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFGH172</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwPGHC172AEnd" name="gwPGHC172AEnd">
+						<bpmn2:incoming>toPGHC172A</bpmn2:incoming>
+						<bpmn2:incoming>flowgwPGHC172AEnd</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="gwPGHC172AEnd" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

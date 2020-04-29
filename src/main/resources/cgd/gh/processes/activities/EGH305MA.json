@@ -1,0 +1,42 @@
+ {
+	"id": "EGH305MA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF514CD",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF514CD",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF514CD",
+					"type": "Flow",
+					"condition": "EGH305MA = 0",
+					"target": "GHF514CD"
+				}
+			]
+		},
+		 {
+			"id": "PGHQ509A",
+			"type": "Task",
+			"actionClass": "Pghq509a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FGH514",
+					"type": "Parameter",
+					"value": "FGH514"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,36 @@
+ {
+	"id": "EGH717OH",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF315CD",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF315CD",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF315CD",
+					"type": "Flow",
+					"condition": "EGH717OH = 0",
+					"target": "GHF315CD"
+				}
+			]
+		},
+		 {
+			"id": "GHF315RO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF315DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		}
+	]
+}

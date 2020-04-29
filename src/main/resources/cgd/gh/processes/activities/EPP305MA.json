@@ -1,0 +1,53 @@
+ {
+	"id": "EPP305MA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPPPQ031A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PPPQ031A",
+					"type": "Task",
+					"actionClass": "Pppq031a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FPP032",
+							"type": "Parameter",
+							"value": "FPP032"
+						},
+						 {
+							"id": "FWK019",
+							"type": "Parameter",
+							"value": "FWK019"
+						}
+					]
+				},
+				 {
+					"id": "toPPPQ031A",
+					"type": "Flow",
+					"condition": "EPP305MA = 0",
+					"target": "PPPQ031A"
+				}
+			]
+		},
+		 {
+			"id": "PPF001ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "PPF002ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

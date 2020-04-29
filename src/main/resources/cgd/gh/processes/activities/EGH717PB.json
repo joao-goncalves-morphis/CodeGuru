@@ -1,0 +1,51 @@
+ {
+	"id": "EGH717PB",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ998A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ998A",
+					"type": "Task",
+					"actionClass": "Pghq998a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH123",
+							"type": "Parameter",
+							"value": "FGH123"
+						},
+						 {
+							"id": "FGH437",
+							"type": "Parameter",
+							"value": "FGH437"
+						},
+						 {
+							"id": "FGH438",
+							"type": "Parameter",
+							"value": "FGH438"
+						},
+						 {
+							"id": "FGH439",
+							"type": "Parameter",
+							"value": "FGH439"
+						},
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ998A",
+					"type": "Flow",
+					"condition": "EGH717PB = 0",
+					"target": "PGHQ998A"
+				}
+			]
+		}
+	]
+}

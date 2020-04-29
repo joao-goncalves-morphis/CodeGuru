@@ -1,0 +1,24 @@
+ {
+	"id": "EGH016D1",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF860R1",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF860R1",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF860R1",
+					"type": "Flow",
+					"condition": "EGH016D1 = 0",
+					"target": "GHF860R1"
+				}
+			]
+		}
+	]
+}

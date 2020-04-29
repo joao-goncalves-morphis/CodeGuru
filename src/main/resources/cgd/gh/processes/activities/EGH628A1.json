@@ -1,0 +1,36 @@
+ {
+	"id": "EGH628A1",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF522CD",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF522CD",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF522CD",
+					"type": "Flow",
+					"condition": "EGH628A1 = 0",
+					"target": "GHF522CD"
+				}
+			]
+		},
+		 {
+			"id": "GHF522RO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF522DL",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "delete"
+		}
+	]
+}
