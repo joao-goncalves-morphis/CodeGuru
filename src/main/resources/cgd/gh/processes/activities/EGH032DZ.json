@@ -1,0 +1,19 @@
+ {
+	"id": "EGH032DZ",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "GHF170SG",
+			"type": "Task",
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "undefined",
+			"elements": [
+				 {
+					"id": "BACKUP",
+					"type": "Parameter",
+					"value": "FGHM32(+1)"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,36 @@
+ {
+	"id": "EHO008DE",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwRTF376RI",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "RTF376RI",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toRTF376RI",
+					"type": "Flow",
+					"condition": "EHO008DE >= 4",
+					"target": "RTF376RI"
+				}
+			]
+		},
+		 {
+			"id": "HOF376R2",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "HOF376R3",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

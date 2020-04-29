@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH307MA" id="EGH307MA" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH307MA" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwGHF001ST"/>
+				<bpmn2:sequenceFlow id="flowgwGHF001STEnd" sourceRef="gwGHF001ST" targetRef="gwGHF001STEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwGHF001ST" name="gwGHF001ST">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwGHF001STEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwGHF001ST_GHF001ST" sourceRef="gwGHF001ST" targetRef="GHF001ST"/>
+				<bpmn2:sequenceFlow id="toGHF001ST" sourceRef="GHF001ST" targetRef="gwGHF001STEnd"/>
+				<bpmn2:serviceTask id="GHF001ST" name="GHF001ST">
+						<bpmn2:incoming>flow_gwGHF001ST_GHF001ST</bpmn2:incoming>
+						<bpmn2:outgoing>toGHF001ST</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF001STIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwGHF001ST_GHF002ST" sourceRef="gwGHF001STEnd" targetRef="GHF002ST"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwGHF001STEnd" name="gwGHF001STEnd">
+						<bpmn2:incoming>toGHF001ST</bpmn2:incoming>
+						<bpmn2:incoming>flowgwGHF001STEnd</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwGHF001ST_GHF002ST</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:sequenceFlow id="flow_GHF002ST_PGHC010A" sourceRef="GHF002ST" targetRef="PGHC010A"/>
+				<bpmn2:serviceTask id="GHF002ST" name="GHF002ST">
+						<bpmn2:incoming>flow_gwGHF001ST_GHF002ST</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF002ST_PGHC010A</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF002STIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:dataObject id="FGH251" name="PGBBANC.FGH251"/>
+				<bpmn2:dataObjectReference dataObjectRef="FGH251" id="RefFGH251" name="PGBBANC.FGH251"/>
+				<bpmn2:dataObject id="FGH252" name="PGBBANC.FGH252"/>
+				<bpmn2:dataObjectReference dataObjectRef="FGH252" id="RefFGH252" name="PGBBANC.FGH252"/>
+				<bpmn2:dataObject id="FHT011" name="PGBBANC.FHT011"/>
+				<bpmn2:dataObjectReference dataObjectRef="FHT011" id="RefFHT011" name="PGBBANC.FHT011"/>
+				<bpmn2:dataObject id="FWK812" name="PGBBANC.FWK812.EGH307MA"/>
+				<bpmn2:dataObjectReference dataObjectRef="FWK812" id="RefFWK812" name="PGBBANC.FWK812.EGH307MA"/>
+				<bpmn2:serviceTask id="PGHC010A" name="PGHC010A">
+						<bpmn2:incoming>flow_GHF002ST_PGHC010A</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PGHC010AIOSpec">
+								<bpmn2:dataInput id="pFGH251" name="pFGH251"/>
+								<bpmn2:dataInput id="pFGH252" name="pFGH252"/>
+								<bpmn2:dataInput id="pFHT011" name="pFHT011"/>
+								<bpmn2:inputSet id="PGHC010AInputSet" name="PGHC010AInputSet">
+										<bpmn2:dataInputRefs>pFGH251</bpmn2:dataInputRefs>
+										<bpmn2:dataInputRefs>pFGH252</bpmn2:dataInputRefs>
+										<bpmn2:dataInputRefs>pFHT011</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFWK812" name="pFWK812"/>
+								<bpmn2:outputSet id="PGHC010AOutputSet" name="PGHC010AOutputSet">
+										<bpmn2:dataOutputRefs>pFWK812</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="FGH251InputAssoc">
+								<bpmn2:sourceRef>RefFGH251</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFGH251</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataInputAssociation id="FGH252InputAssoc">
+								<bpmn2:sourceRef>RefFGH252</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFGH252</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataInputAssociation id="FHT011InputAssoc">
+								<bpmn2:sourceRef>RefFHT011</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFHT011</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FWK812OutputAssoc">
+								<bpmn2:sourceRef>pFWK812</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFWK812</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="PGHC010A" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

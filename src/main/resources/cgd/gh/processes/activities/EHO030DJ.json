@@ -1,0 +1,46 @@
+ {
+	"id": "EHO030DJ",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPHOC708A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PHOC708A",
+					"type": "Task",
+					"actionClass": "Phoc708a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK189",
+							"type": "Parameter",
+							"value": "FWK189"
+						},
+						 {
+							"id": "FWK192",
+							"type": "Parameter",
+							"value": "FWK192"
+						},
+						 {
+							"id": "FWK546",
+							"type": "Parameter",
+							"value": "FWK546"
+						}
+					]
+				},
+				 {
+					"id": "toPHOC708A",
+					"type": "Flow",
+					"condition": "EHO030DJ = 0",
+					"target": "PHOC708A"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,71 @@
+ {
+	"id": "EGH306MA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ171A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ171A",
+					"type": "Task",
+					"actionClass": "Pghq171a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK003",
+							"type": "Parameter",
+							"value": "FWK003"
+						},
+						 {
+							"id": "FWK004",
+							"type": "Parameter",
+							"value": "FWK004"
+						},
+						 {
+							"id": "FWK006",
+							"type": "Parameter",
+							"value": "FWK006"
+						},
+						 {
+							"id": "FWK008",
+							"type": "Parameter",
+							"value": "FWK008"
+						},
+						 {
+							"id": "FWK010",
+							"type": "Parameter",
+							"value": "FWK010"
+						},
+						 {
+							"id": "FWK012",
+							"type": "Parameter",
+							"value": "FWK012"
+						},
+						 {
+							"id": "FWK808",
+							"type": "Parameter",
+							"value": "FWK808"
+						},
+						 {
+							"id": "FWK809",
+							"type": "Parameter",
+							"value": "FWK809"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ171A",
+					"type": "Flow",
+					"condition": "EGH306MA = 0",
+					"target": "PGHQ171A"
+				}
+			]
+		}
+	]
+}

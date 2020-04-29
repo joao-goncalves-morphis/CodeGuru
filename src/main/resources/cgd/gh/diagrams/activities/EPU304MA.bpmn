@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EPU304MA" id="EPU304MA" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EPU304MA" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwPPUQ030A"/>
+				<bpmn2:sequenceFlow id="flowgwPPUQ030AEnd" sourceRef="gwPPUQ030A" targetRef="gwPPUQ030AEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwPPUQ030A" name="gwPPUQ030A">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwPPUQ030AEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwPPUQ030A_PPUQ030A" sourceRef="gwPPUQ030A" targetRef="PPUQ030A"/>
+				<bpmn2:sequenceFlow id="toPPUQ030A" sourceRef="PPUQ030A" targetRef="gwPPUQ030AEnd"/>
+				<bpmn2:serviceTask id="PPUQ030A" name="PPUQ030A">
+						<bpmn2:incoming>flow_gwPPUQ030A_PPUQ030A</bpmn2:incoming>
+						<bpmn2:outgoing>toPPUQ030A</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PPUQ030AIOSpec">
+								<bpmn2:dataInput id="pFHT011" name="pFHT011"/>
+								<bpmn2:dataInput id="pFWK020" name="pFWK020"/>
+								<bpmn2:inputSet id="PPUQ030AInputSet" name="PPUQ030AInputSet">
+										<bpmn2:dataInputRefs>pFHT011</bpmn2:dataInputRefs>
+										<bpmn2:dataInputRefs>pFWK020</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFPU030" name="pFPU030"/>
+								<bpmn2:outputSet id="PPUQ030AOutputSet" name="PPUQ030AOutputSet">
+										<bpmn2:dataOutputRefs>pFPU030</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="FHT011InputAssoc">
+								<bpmn2:sourceRef>RefFHT011</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFHT011</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataInputAssociation id="FWK020InputAssoc">
+								<bpmn2:sourceRef>RefFWK020</bpmn2:sourceRef>
+								<bpmn2:targetRef>pFWK020</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FPU030OutputAssoc">
+								<bpmn2:sourceRef>pFPU030</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFPU030</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwPPUQ030A_PUF001ST" sourceRef="gwPPUQ030AEnd" targetRef="PUF001ST"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwPPUQ030AEnd" name="gwPPUQ030AEnd">
+						<bpmn2:incoming>toPPUQ030A</bpmn2:incoming>
+						<bpmn2:incoming>flowgwPPUQ030AEnd</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwPPUQ030A_PUF001ST</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:sequenceFlow id="flow_PUF001ST_PUF002ST" sourceRef="PUF001ST" targetRef="PUF002ST"/>
+				<bpmn2:serviceTask id="PUF001ST" name="PUF001ST">
+						<bpmn2:incoming>flow_gwPPUQ030A_PUF001ST</bpmn2:incoming>
+						<bpmn2:outgoing>flow_PUF001ST_PUF002ST</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PUF001STIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="PUF002ST" name="PUF002ST">
+						<bpmn2:incoming>flow_PUF001ST_PUF002ST</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PUF002STIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="PUF002ST" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

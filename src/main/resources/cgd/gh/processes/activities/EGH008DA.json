@@ -1,0 +1,54 @@
+ {
+	"id": "EGH008DA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF376RI",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF376RI",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF376RI",
+					"type": "Flow",
+					"condition": "EGH008DA = 0",
+					"target": "GHF376RI"
+				}
+			]
+		},
+		 {
+			"id": "GHF377RI",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF04CRI",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF376RO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF377RO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		},
+		 {
+			"id": "GHF04CRO",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

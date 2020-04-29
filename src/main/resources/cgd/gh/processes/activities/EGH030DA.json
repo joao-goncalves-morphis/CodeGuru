@@ -1,0 +1,47 @@
+ {
+	"id": "EGH030DA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ010A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ010A",
+					"type": "Task",
+					"actionClass": "Pghq010a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH100",
+							"type": "Parameter",
+							"value": "FGH100"
+						},
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK923",
+							"type": "Parameter",
+							"value": "FWK923"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ010A",
+					"type": "Flow",
+					"condition": "EGH030DA = 0",
+					"target": "PGHQ010A"
+				}
+			]
+		},
+		 {
+			"id": "GHF002ST",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

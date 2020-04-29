@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH029DA" id="EGH029DA" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH029DA" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwGHF512CD"/>
+				<bpmn2:sequenceFlow id="flowgwGHF512CDEnd" sourceRef="gwGHF512CD" targetRef="gwGHF512CDEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwGHF512CD" name="gwGHF512CD">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwGHF512CDEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwGHF512CD_GHF512CD" sourceRef="gwGHF512CD" targetRef="GHF512CD"/>
+				<bpmn2:sequenceFlow id="toGHF512CD" sourceRef="GHF512CD" targetRef="gwGHF512CDEnd"/>
+				<bpmn2:serviceTask id="GHF512CD" name="GHF512CD">
+						<bpmn2:incoming>flow_gwGHF512CD_GHF512CD</bpmn2:incoming>
+						<bpmn2:outgoing>toGHF512CD</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF512CDIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:sequenceFlow id="flow_gwGHF512CD_GHF512RO" sourceRef="gwGHF512CDEnd" targetRef="GHF512RO"/>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwGHF512CDEnd" name="gwGHF512CDEnd">
+						<bpmn2:incoming>toGHF512CD</bpmn2:incoming>
+						<bpmn2:incoming>flowgwGHF512CDEnd</bpmn2:incoming>
+						<bpmn2:outgoing>flow_gwGHF512CD_GHF512RO</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:sequenceFlow id="flow_GHF512RO_GHF512DL" sourceRef="GHF512RO" targetRef="GHF512DL"/>
+				<bpmn2:serviceTask id="GHF512RO" name="GHF512RO">
+						<bpmn2:incoming>flow_gwGHF512CD_GHF512RO</bpmn2:incoming>
+						<bpmn2:outgoing>flow_GHF512RO_GHF512DL</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF512ROIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:serviceTask id="GHF512DL" name="GHF512DL">
+						<bpmn2:incoming>flow_GHF512RO_GHF512DL</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="GHF512DLIOSpec">
+						</bpmn2:ioSpecification>
+				</bpmn2:serviceTask>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="GHF512DL" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

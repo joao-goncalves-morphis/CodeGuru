@@ -1,0 +1,93 @@
+# Working folder
+workingFolder: D:/Work/CGD/gh/temp
+
+# Localization configuration
+localization:
+   defaultLocale: en_US
+   source:
+      type: morphis.framework.localization.ResourceBundleLocalizationSource
+      basenames:
+         - messages/framework
+         - messages/frameworkTests
+   resolver:
+       type: morphis.framework.localization.FixedLocalizationResolver
+
+# Database connection configuration 
+connectionProvider:
+    # CGD
+    type: morphis.framework.persistence.relational.providers.PGConnectionProvider
+    serverName: postgresdb
+    portNumber: 5432
+    databaseName: BDGDEV0001
+    user: morphis
+    password: morphis
+    autoCommit: false
+    connectionCheckTimeout: 3  # Maximum time in seconds to wait for the connection validation to complete
+
+
+  # SQLite configuration (sqlite engine must be configured to execute in the server)
+sqlite:
+    basePath: D:/Work/CGD/gh/sqlitedb/  # Base path for database files
+    defaultDbName: filesdb  # Default database file name
+
+
+# Runtime options
+options:
+    flavour: ZOS_MAINFRAME  # ZOS_MAINFRAME | VISUAL_COBOL
+    charset: IBM1047  # Charset used for IO
+    namedCharsets:
+       report: ISO-8859-1  # Charset used for reports
+    baseIndex: 1  # Index of first element of arrays
+    decimalPoint: ','  # Decimal separator character
+    sessionDataAttribute: SessionData  # Name of the HttpSession attribute where session data is stored
+    dumpDataClasses: D:/Temp/dump  # If set, data classes are dumped in this folder
+  
+
+--- # Spring Boot
+spring:
+  main:
+    logStartupInfo: true
+    banner-mode: console   # "off" | console | log
+
+# Packages where table classes can be found
+tablePackages:
+    - cgd.gh.persistence.database
+
+# Packages where services classes can be found
+servicePackages:
+    - cgd.gh.online 
+
+# Processes configuration
+processes:
+        
+    # MultiThreading
+    multiThreading:   
+      enabled: true
+      threadNumber: 10
+      
+    # Processes to run (job orquestrations)
+    processPaths:
+      # each path must have processPaths/processes/ + processPaths/activities/ structure
+      LOADV1: cgd/gh/testes/
+      LOADV2: cgd/gh/testes/
+
+    # Action packages
+    actionPackages:
+      - cgd.gh.batch
+      - cgd.gh.persistence.database
+      - cgd.gh.persistence.files
+
+# DataSets max number of versions 
+dataSetMaxVersions:
+    SAIDA_V1           : 255 
+    SAIDA_V2           : 255 
+
+# DataSets paths configuration
+dataSets:
+# CARREGAMENTO DADOS DE TESTE
+    ENTRADA_V1         : ENTRADA_V1 
+    SAIDA_V1           : SAIDA_V1() 
+    ENTRADA_V2         : ENTRADA_V2 
+    SAIDA_V2           : SAIDA_V2() 
+
+

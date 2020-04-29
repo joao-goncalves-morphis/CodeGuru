@@ -1,0 +1,118 @@
+ {
+	"id": "EGH628AA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwGHF452RI",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "GHF452RI",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toGHF452RI",
+					"type": "Flow",
+					"condition": "EGH628AA = 0",
+					"target": "GHF452RI"
+				}
+			]
+		},
+		 {
+			"id": "PGHC502A",
+			"type": "Task",
+			"actionClass": "Pghc502a",
+			"actionMethod": "execute",
+			"elements": [
+				 {
+					"id": "FGH300",
+					"type": "Parameter",
+					"value": "FWK300"
+				},
+				 {
+					"id": "FWK050",
+					"type": "Parameter",
+					"value": "FWK050"
+				},
+				 {
+					"id": "FWK051",
+					"type": "Parameter",
+					"value": "FWK051"
+				},
+				 {
+					"id": "FWK052",
+					"type": "Parameter",
+					"value": "FWK052"
+				},
+				 {
+					"id": "FWK053",
+					"type": "Parameter",
+					"value": "FWK053"
+				},
+				 {
+					"id": "FWK054",
+					"type": "Parameter",
+					"value": "FWK054"
+				},
+				 {
+					"id": "FWK055",
+					"type": "Parameter",
+					"value": "FWK055"
+				},
+				 {
+					"id": "FWK056",
+					"type": "Parameter",
+					"value": "FWK056"
+				},
+				 {
+					"id": "FWK057",
+					"type": "Parameter",
+					"value": "FWK057"
+				},
+				 {
+					"id": "FWK058",
+					"type": "Parameter",
+					"value": "FWK058"
+				},
+				 {
+					"id": "FWK059",
+					"type": "Parameter",
+					"value": "FWK059"
+				},
+				 {
+					"id": "FWK060",
+					"type": "Parameter",
+					"value": "FWK060"
+				},
+				 {
+					"id": "FWK061",
+					"type": "Parameter",
+					"value": "FWK061"
+				},
+				 {
+					"id": "FWK062",
+					"type": "Parameter",
+					"value": "FWK062"
+				},
+				 {
+					"id": "FWK063",
+					"type": "Parameter",
+					"value": "FWK063"
+				},
+				 {
+					"id": "FWK064",
+					"type": "Parameter",
+					"value": "FWK064"
+				}
+			]
+		},
+		 {
+			"id": "GHF452R0",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

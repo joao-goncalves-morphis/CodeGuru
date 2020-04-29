@@ -1,0 +1,30 @@
+ {
+	"id": "EHO022DI",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwHOF266RO",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "HOF266RO",
+					"type": "Task"
+					"actionClass": "GenericFileHandler",
+					"actionMethod": "copy"
+				},
+				 {
+					"id": "toHOF266RO",
+					"type": "Flow",
+					"condition": "EHO022DI = 0",
+					"target": "HOF266RO"
+				}
+			]
+		},
+		 {
+			"id": "HOF177CK",
+			"type": "Task"
+			"actionClass": "GenericFileHandler",
+			"actionMethod": "copy"
+		}
+	]
+}

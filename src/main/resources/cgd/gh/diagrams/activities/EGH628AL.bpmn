@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="jobs.EGH628AL" id="EGH628AL" targetNamespace="http://org.eclipse.bpmn2/default/process" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<bpmn2:process id="EGH628AL" isExecutable="false" name="Default Process">
+				<bpmn2:startEvent id="StartEvent" name="Start Event">
+						<bpmn2:outgoing>StartFlow</bpmn2:outgoing>
+				</bpmn2:startEvent>
+				<bpmn2:sequenceFlow id="StartFlow" sourceRef="StartEvent" targetRef="gwPGHQ502A"/>
+				<bpmn2:sequenceFlow id="flowgwPGHQ502AEnd" sourceRef="gwPGHQ502A" targetRef="gwPGHQ502AEnd"/>
+				<bpmn2:exclusiveGateway gatewayDirection="Diverging" id="gwPGHQ502A" name="gwPGHQ502A">
+						<bpmn2:incoming>StartFlow</bpmn2:incoming>
+						<bpmn2:outgoing>flowgwPGHQ502AEnd</bpmn2:outgoing>
+				</bpmn2:exclusiveGateway>
+				<bpmn2:sequenceFlow id="flow_gwPGHQ502A_PGHQ502A" sourceRef="gwPGHQ502A" targetRef="PGHQ502A"/>
+				<bpmn2:sequenceFlow id="toPGHQ502A" sourceRef="PGHQ502A" targetRef="gwPGHQ502AEnd"/>
+				<bpmn2:serviceTask id="PGHQ502A" name="PGHQ502A">
+						<bpmn2:incoming>flow_gwPGHQ502A_PGHQ502A</bpmn2:incoming>
+						<bpmn2:outgoing>toPGHQ502A</bpmn2:outgoing>
+						<bpmn2:ioSpecification id="PGHQ502AIOSpec">
+								<bpmn2:dataInput id="pINPUT1" name="pINPUT1"/>
+								<bpmn2:inputSet id="PGHQ502AInputSet" name="PGHQ502AInputSet">
+										<bpmn2:dataInputRefs>pINPUT1</bpmn2:dataInputRefs>
+								</bpmn2:inputSet>
+								<bpmn2:dataOutput id="pFGH300" name="pFGH300"/>
+								<bpmn2:dataOutput id="pFWK502" name="pFWK502"/>
+								<bpmn2:outputSet id="PGHQ502AOutputSet" name="PGHQ502AOutputSet">
+										<bpmn2:dataOutputRefs>pFGH300</bpmn2:dataOutputRefs>
+										<bpmn2:dataOutputRefs>pFWK502</bpmn2:dataOutputRefs>
+								</bpmn2:outputSet>
+						</bpmn2:ioSpecification>
+						<bpmn2:dataInputAssociation id="INPUT1InputAssoc">
+								<bpmn2:sourceRef>RefINPUT1</bpmn2:sourceRef>
+								<bpmn2:targetRef>pINPUT1</bpmn2:targetRef>
+						</bpmn2:dataInputAssociation>
+						<bpmn2:dataOutputAssociation id="FGH300OutputAssoc">
+								<bpmn2:sourceRef>pFGH300</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFGH300</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+						<bpmn2:dataOutputAssociation id="FWK502OutputAssoc">
+								<bpmn2:sourceRef>pFWK502</bpmn2:sourceRef>
+								<bpmn2:targetRef>RefFWK502</bpmn2:targetRef>
+						</bpmn2:dataOutputAssociation>
+				</bpmn2:serviceTask>
+				<bpmn2:parallelGateway gatewayDirection="Converging" id="gwPGHQ502AEnd" name="gwPGHQ502AEnd">
+						<bpmn2:incoming>toPGHQ502A</bpmn2:incoming>
+						<bpmn2:incoming>flowgwPGHQ502AEnd</bpmn2:incoming>
+						<bpmn2:outgoing>LastFlow</bpmn2:outgoing>
+				</bpmn2:parallelGateway>
+				<bpmn2:endEvent id="EndEvent" name="End Event">
+						<bpmn2:incoming>LastFlow</bpmn2:incoming>
+				</bpmn2:endEvent>
+				<bpmn2:sequenceFlow id="LastFlow" sourceRef="gwPGHQ502AEnd" targetRef="EndEvent"/>
+		</bpmn2:process>
+</bpmn2:definitions>

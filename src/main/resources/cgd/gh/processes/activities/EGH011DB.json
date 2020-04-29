@@ -1,0 +1,51 @@
+ {
+	"id": "EGH011DB",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ902A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ902A",
+					"type": "Task",
+					"actionClass": "Pghq902a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH020",
+							"type": "Parameter",
+							"value": "FGH020"
+						},
+						 {
+							"id": "FGH021",
+							"type": "Parameter",
+							"value": "FGH021"
+						},
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						},
+						 {
+							"id": "FWK020",
+							"type": "Parameter",
+							"value": "FWK020"
+						},
+						 {
+							"id": "FWK021",
+							"type": "Parameter",
+							"value": "FWK021"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ902A",
+					"type": "Flow",
+					"condition": "EGH011DB = 0",
+					"target": "PGHQ902A"
+				}
+			]
+		}
+	]
+}

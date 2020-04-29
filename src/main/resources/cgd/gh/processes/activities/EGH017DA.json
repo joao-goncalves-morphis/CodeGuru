@@ -1,0 +1,36 @@
+ {
+	"id": "EGH017DA",
+	"type": "Activity",
+	"elements": [
+		 {
+			"id": "gwPGHQ131A",
+			"type": "Gateway",
+			"elements": [
+				 {
+					"id": "PGHQ131A",
+					"type": "Task",
+					"actionClass": "Pghq131a",
+					"actionMethod": "execute",
+					"elements": [
+						 {
+							"id": "FGH129",
+							"type": "Parameter",
+							"value": "FGH129"
+						},
+						 {
+							"id": "FHT011",
+							"type": "Parameter",
+							"value": "FHT011"
+						}
+					]
+				},
+				 {
+					"id": "toPGHQ131A",
+					"type": "Flow",
+					"condition": "EGH017DA = 0",
+					"target": "PGHQ131A"
+				}
+			]
+		}
+	]
+}
