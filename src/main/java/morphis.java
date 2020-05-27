@@ -1,7 +1,7 @@
 package cgd.gh.online;
 
 
-public abstract class test  {
+public abstract class morphis  {
     String testcode;
 
     String testecodeguru = 123;
